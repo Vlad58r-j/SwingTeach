@@ -19,6 +19,7 @@ public class Main1 {
         jTextField1.getText();
         jTextField1.setBackground(Color.black);
         jPanel.revalidate();
+        jPanel.add(jTextArea);
 
     }
 
