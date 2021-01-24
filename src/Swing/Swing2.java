@@ -2,14 +2,10 @@ package Swing;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
-public class Swing1 {
+
+public class Swing2 {
     public static void main(String[] args) {
         JFrame jFrame = new JFrame();
         JPanel jPanel = new JPanel();
@@ -28,11 +24,30 @@ public class Swing1 {
         jPanel.add(jButton, BorderLayout.SOUTH);
 
         jButton.addActionListener(e -> {
-            String text = jTextField.getText() + "\n" + jTextField1.getText() + "\n";
-            File file = new File("E:/Vlad/vot.txt");
+            String text = jTextField.getText()+ "\n" + jTextField1.getText();
+            String mon = jTextField.getText()+".txt";
+            File way = new File("E:/Vlad/" + jTextField.getText() + "/" + jTextField1.getText()+"/");
+            boolean save = way.mkdirs();
+            File file = new File(mon);
+            String name = save + "/" + jTextField.getText() + ".txt";
+//            FileWriter fileWriter = null;
+//            try {
+//                fileWriter = new FileWriter(name);
+//                for (int i = 0; i < text.length(); i++) {
+//                    fileWriter.write(text.charAt(i));
+//                }
+//            } catch (IOException ioException) {
+//                ioException.printStackTrace();
+//            } finally {
+//                try {
+//                    fileWriter.close();
+//                } catch (IOException ioException) {
+//                    ioException.printStackTrace();
+//                }
+//            }
             FileWriter fileWrite = null;
             try {
-                fileWrite = new FileWriter(file);
+                fileWrite = new FileWriter(name);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }

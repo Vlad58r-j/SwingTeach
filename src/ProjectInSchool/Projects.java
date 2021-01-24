@@ -55,7 +55,7 @@ public class Projects {
         jTextField.setBounds(100, i, 80, 20);
         jPanelTextField.add(jTextField);
 
-        jButton.addActionListener(e -> {
+//        jButton.addActionListener(e -> {
             String text = jTextField.getText();
             String file = "E:/Vlad/vot.txt";
             FileWriter fileWrite = null;
@@ -79,6 +79,6 @@ public class Projects {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-        });
+//        });
     }
 }

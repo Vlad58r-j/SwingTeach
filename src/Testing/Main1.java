@@ -1,4 +1,4 @@
-package java;
+package Testing;
 
 public class Main1 {
 }
