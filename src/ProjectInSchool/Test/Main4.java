@@ -25,7 +25,7 @@ public class Main4 {
         String c1 = two.getText();
         System.out.println(c);
         System.out.println(c1);
-        File newFile = new File("E:\\Vlad\\vot.txt");
+        File newFile = new File("E:/Vlad/vot.txt");
         try {
             boolean created = newFile.createNewFile();
             if (created)

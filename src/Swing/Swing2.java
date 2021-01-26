@@ -12,61 +12,33 @@ public class Swing2 {
         jPanel.setBackground(Color.CYAN);
         jFrame.add(jPanel);
 
-        JTextField jTextField = new JTextField(50);
-        jTextField.setBounds(0, 200, 80, 20);
-        jPanel.add(jTextField);
+        JTextField jTextFieldName = new JTextField(50);
+        jTextFieldName.setBounds(0, 200, 80, 20);
+        jPanel.add(jTextFieldName);
 
-        JTextField jTextField1 = new JTextField(50);
-        jTextField1.setBounds(0, 300, 80, 20);
-        jPanel.add(jTextField1);
+        JTextField jTextFieldSurname = new JTextField(50);
+        jTextFieldSurname.setBounds(0, 300, 80, 20);
+        jPanel.add(jTextFieldSurname);
 
         JButton jButton = new JButton();
         jPanel.add(jButton, BorderLayout.SOUTH);
 
         jButton.addActionListener(e -> {
-            String text = jTextField.getText()+ "\n" + jTextField1.getText();
-            String mon = jTextField.getText()+".txt";
-            File way = new File("E:/Vlad/" + jTextField.getText() + "/" + jTextField1.getText()+"/");
-            boolean save = way.mkdirs();
-            File file = new File(mon);
-            String name = save + "/" + jTextField.getText() + ".txt";
-//            FileWriter fileWriter = null;
-//            try {
-//                fileWriter = new FileWriter(name);
-//                for (int i = 0; i < text.length(); i++) {
-//                    fileWriter.write(text.charAt(i));
-//                }
-//            } catch (IOException ioException) {
-//                ioException.printStackTrace();
-//            } finally {
-//                try {
-//                    fileWriter.close();
-//                } catch (IOException ioException) {
-//                    ioException.printStackTrace();
-//                }
-//            }
-            FileWriter fileWrite = null;
-            try {
-                fileWrite = new FileWriter(name);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
+            String text = jTextFieldName.getText() + "\n" + jTextFieldSurname.getText();
+            String path = "E:/Vlad/" + jTextFieldName.getText() + "/" + jTextFieldSurname.getText() + "/";
 
-            assert fileWrite != null;
-            BufferedWriter bufferWriter = new BufferedWriter(fileWrite);
+//            new File(path).mkdirs();
 
-            try {
+            File name = new File(path + jTextFieldName.getText() + ".txt");
+            try (FileWriter fileWrite = new FileWriter(name)) {
+                BufferedWriter bufferWriter = new BufferedWriter(fileWrite);
                 bufferWriter.write(text);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-
-            try {
                 bufferWriter.close();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
         });
+
 
         jFrame.setVisible(true);
         jFrame.setTitle("Hello");

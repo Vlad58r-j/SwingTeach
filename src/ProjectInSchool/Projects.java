@@ -56,29 +56,29 @@ public class Projects {
         jPanelTextField.add(jTextField);
 
 //        jButton.addActionListener(e -> {
-            String text = jTextField.getText();
-            String file = "E:/Vlad/vot.txt";
-            FileWriter fileWrite = null;
-            try {
-                fileWrite = new FileWriter(file);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-
-            assert fileWrite != null;
-            BufferedWriter bufferWriter = new BufferedWriter(fileWrite);
-
-            try {
-                bufferWriter.write(text);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
-
-            try {
-                bufferWriter.close();
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            }
+//            String text = jTextField.getText();
+//            String file = "E:/Vlad/vot.txt";
+//            FileWriter fileWrite = null;
+//            try {
+//                fileWrite = new FileWriter(file);
+//            } catch (IOException ioException) {
+//                ioException.printStackTrace();
+//            }
+//
+//            assert fileWrite != null;
+//            BufferedWriter bufferWriter = new BufferedWriter(fileWrite);
+//
+//            try {
+//                bufferWriter.write(text);
+//            } catch (IOException ioException) {
+//                ioException.printStackTrace();
+//            }
+//
+//            try {
+//                bufferWriter.close();
+//            } catch (IOException ioException) {
+//                ioException.printStackTrace();
+//            }
 //        });
     }
 }
